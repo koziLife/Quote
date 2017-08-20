@@ -38,7 +38,7 @@ public class RateCalculation {
         for (Lender lender : lenders) {
             if (requestAmount <= lender.getAmount()) {
                 interestAmount += (requestAmount * lender.getRate());
-                rate = (interestAmount * 100) / amount;
+                rate = Double.parseDouble(String.format("%.1f",(interestAmount * 100) / amount));
                 totalRepayment = interestAmount + amount;
                 monthlyRepayment = Double.parseDouble(String.format("%.2f", (totalRepayment / length)));
                 response = new QuoteResponse(amount, rate, monthlyRepayment, totalRepayment);
