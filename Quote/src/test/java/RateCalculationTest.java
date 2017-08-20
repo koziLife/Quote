@@ -35,8 +35,8 @@ public class RateCalculationTest {
         QuoteResponse response = rateCalculation.quote(1000, 36);
         assertEquals(1000, response.getRequestedAmount(),0);
         assertEquals(20.0, response.getRate(), 0);
-        double monthlyAmount = Double.parseDouble(String.format("%.2f",1200.0/36));
-        assertEquals(monthlyAmount, response.getMonthlyRepayment(),0);
+        String monthlyAmount = String.format("%.2f",1200.0/36);
+        assertEquals(monthlyAmount, String.format("%.2f",response.getMonthlyRepayment()));
         assertEquals(1200, response.getTotalRepayment(),0);
     }
 
@@ -45,8 +45,8 @@ public class RateCalculationTest {
         QuoteResponse response = rateCalculation.quote(2000, 36);
         assertEquals(2000, response.getRequestedAmount(),0);
         assertEquals(30.0, response.getRate(), 0);
-        double monthlyAmount = Double.parseDouble(String.format("%.2f",2600.0/36));
-        assertEquals(monthlyAmount, response.getMonthlyRepayment(),0);
+        String monthlyAmount = String.format("%.2f",2600.0/36);
+        assertEquals(monthlyAmount, String.format("%.2f",response.getMonthlyRepayment()));
         assertEquals(2600, response.getTotalRepayment(),0);
     }
 

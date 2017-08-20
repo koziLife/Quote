@@ -49,9 +49,9 @@ public class QuoteResponse {
      */
     @Override
     public String toString() {
-        return "Requested amount: £" + requestedAmount +
-                "\nRate: " + rate + "%" +
-                "\nMonthly repayment: £" + monthlyRepayment +
-                "\nTotal repayment: £" + totalRepayment;
+        return "Requested amount: £" + String.format("%.2f", requestedAmount) +
+                "\nRate: " + String.format("%.1f",rate) + "%" +
+                "\nMonthly repayment: £" + String.format("%.2f", monthlyRepayment) +
+                "\nTotal repayment: £" + String.format("%.2f", totalRepayment);
     }
 }
